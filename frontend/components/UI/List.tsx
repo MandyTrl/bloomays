@@ -15,12 +15,12 @@ export const List = ({
 	isArriving,
 }: ListProps) => {
 	return (
-		<>
-			<p className="mb-2">
+		<div className="mb-3">
+			<p>
 				<span
 					className={clsx(
 						!isArriving ? "text-green-600" : "text-red-600",
-						"underline underline-offset-2"
+						"underline underline-offset-2 text-lg mr-1"
 					)}>
 					{numberOfItems}
 				</span>{" "}
@@ -35,7 +35,7 @@ export const List = ({
 						<li key={date}>
 							<div>
 								<div className="flex items-center justify-start">
-									<p className="puce w-2 h-2 bg-slate-300 rounded-full mr-4"></p>
+									<p className="puce w-2 h-2 bg-slate-400 rounded-full mr-4"></p>
 									<p
 										className={clsx(
 											!isArriving ? "text-green-600" : "text-red-600"
@@ -50,9 +50,9 @@ export const List = ({
 											key={mission.id}
 											className={clsx(
 												!isLastItem
-													? "border-l border-l-slate-300"
+													? "border-l border-l-slate-400"
 													: "border-none",
-												"text-xs text-slate-300 pl-4 ml-1 py-2 my-1"
+												"text-xs text-slate-400 pl-4 ml-1 py-2 my-1"
 											)}>
 											{mission.firstname} {mission.lastname}
 										</p>
@@ -63,6 +63,6 @@ export const List = ({
 					)
 				})}
 			</ul>
-		</>
+		</div>
 	)
 }

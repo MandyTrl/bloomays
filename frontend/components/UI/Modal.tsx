@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import { List } from "./List"
 import { Button } from "./Button"
-import { Loading } from "./Loading"
+import { Loading } from "../Loading"
 
 export type Mission = {
 	firstname: string
@@ -49,14 +49,14 @@ export const Modal = ({ isShow, onClick, missions, isLoading }: ModalProps) => {
 		<div
 			className={clsx(
 				isShow ? "opacity-100" : "opacity-0",
-				"w-5/6 md:w-1/5 flex flex-col items-center transition delay-100 ease-in-out shadow-xl z-30 absolute bottom-[130%] md:right-1/2 right-[45%] transform translate-x-1/2 rounded bg-white border border-primary/10"
+				"w-full flex items-center justify-center transition delay-100 ease-in-out"
 			)}>
-			{!isLoading && <Button onClick={onClick} iconUrl="/assets/close.png" />}
-
 			{isLoading ? (
 				<Loading />
 			) : (
-				<div className="px-8 py-4">
+				<div className="w-5/6 md:w-1/5 h-fit px-6 py-4 mb-4 flex flex-col items-center rounded bg-white shadow-xl">
+					<Button onClick={onClick} iconUrl="/assets/close.png" />
+
 					{bloomersArriving !== 0 && missions ? (
 						<List
 							title={bloomersArrivingTitle}

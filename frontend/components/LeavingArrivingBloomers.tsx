@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react"
-import { Button } from "./Button"
-import { FlowBloomays, Modal } from "./Modal"
+import { Button } from "./UI/Button"
+import { FlowBloomays, Modal } from "./UI/Modal"
 
 export const LeavingArrivingBloomers = () => {
 	const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL!
@@ -38,15 +38,15 @@ export const LeavingArrivingBloomers = () => {
 	}, [isShow])
 
 	return (
-		<div className="w-full flex items-center justify-center relative">
-			<Button title="Flux des bloomers" onClick={handleClick} />
-
+		<div className="w-full flex flex-col items-center fixed bottom-[5%] md:bottom-[14%] left-0">
 			<Modal
 				isShow={isShow}
 				onClick={handleClick}
 				missions={missions}
 				isLoading={isLoading}
 			/>
+
+			<Button title="Flux des bloomers" onClick={handleClick} />
 		</div>
 	)
 }

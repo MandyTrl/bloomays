@@ -12,9 +12,9 @@ export const Button = ({ title, onClick, iconUrl }: ButtonProps) => {
 		<button
 			className={clsx(
 				title
-					? "bg-primary py-3 px-6 rounded-full text-white font-bold hover:bg-secondary hover:scale-105 transition-color duration-150 ease-in-out"
-					: "self-end my-3 mx-1 px-2",
-				"w-fit"
+					? "bg-primary py-3 px-6 rounded-full text-white font-bold hover:bg-secondary hover:scale-105"
+					: "self-end mb-3 mt-2 mx-1 hover:scale-90",
+				"w-fit transition-all duration-150 ease-in-out"
 			)}
 			onClick={onClick}>
 			{iconUrl ? (
